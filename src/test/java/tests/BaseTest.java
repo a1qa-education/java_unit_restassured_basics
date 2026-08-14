@@ -31,6 +31,10 @@ public abstract class BaseTest {
     @AfterMethod
     public void deleteCreatedPets() {
         createdPetIds.forEach(this::deletePetById);
+        // Clear the list after teardown: TestNG reuses one instance of this class across
+        // every @Test method in a subclass, so leftover ids would otherwise stick around
+        // and get "deleted" again (uselessly) on every subsequent test's teardown.
+        createdPetIds.clear();
     }
 
     protected void deletePetById(Long petId) {

@@ -9,7 +9,6 @@ public class Endpoints {
     public final String PET_BY_ID = "%s/{%s}".formatted(PET, Params.ID);
     // TODO: add missing Petstore endpoints
 
-    // httpbin.org endpoints
-    public final String BASIC_AUTH = "/basic-auth/%s/%s";
-    // TODO: add missing httpbin.org endpoints
+    // Test Case 5 (bearer auth against httpbin.org) is written from scratch -
+    // add the httpbin.org base URL/endpoint yourself as part of that test.
 }

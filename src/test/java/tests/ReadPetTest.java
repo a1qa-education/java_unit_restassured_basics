@@ -4,41 +4,23 @@ import org.testng.annotations.Test;
 import utils.RandomUtils;
 
 public class ReadPetTest extends BaseTest {
-    private static final String PET_NOT_FOUND_RESPONSE_MESSAGE = "Pet not found";
 
-    @Test(description = "Get a pet by id - 200 Success")
+    @Test(description = "Test Case 2 - Get a Pet by ID")
     public void getPetById() {
-        // TODO: complete the test case
+        // TODO: create the pet; assert status code and add its id to createdPetIds for teardown
 
-        /*
-         A wait between POST and GET requests might be needed to wait for a pet to be saved before accessing it.
-         As the main goal of this unit is to learn RestAssured, you may mock this wait so far by any means,
-         but think how we can handle this situation effectively, we'll implement it in the next unit.
-         */
+        // TODO: retrieve the pet by id and assert status code
+
+        // TODO: assert the retrieved pet's name matches the created pet's name
     }
 
-    @Test(description = "Get a non-existing pet by id - 404 Not Found")
-    public void getNonExistingPetById() {
-        long nonExistingId = RandomUtils.getRandomLong();
-
-        // TODO: complete the test case
-
-        /*
-         Because of the mock API service limits, we cannot get a vacant pet id from the service.
-         There is a chance of generating an existing id using a randomizer. On real projects,
-         a vacant id will be retrieved by requests.
-         */
-    }
-
-    @Test(description = "Get a pet by invalid id - 400 Bad Request")
+    @Test(description = "Test Case 4 - Get a Pet by an Invalid ID")
     public void getPetByInvalidId() {
         String invalidId = RandomUtils.getRandomAlphabeticString();
 
-        // TODO: complete the test case
+        // TODO: send GET with the invalid id and assert status code is 400
 
-        /*
-         This test will fail due to a defect. By the documentation,
-         it should return status code 400, but it returns status code 404.
-         */
+        // Note: this will fail - the documentation says 400, the real API returns 404 (DEFECT-001).
+        // Don't skip it; the failure is the point.
     }
 }
